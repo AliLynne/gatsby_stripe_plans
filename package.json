@@ -1,0 +1,18 @@
+{
+  "name": "gatsby_playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "npm run develop"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gatsby": "^2.15.6",
+    "gatsby-plugin-manifest": "^2.2.13",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}
