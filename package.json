@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "develop": "gatsby develop",
-    "start": "npm run develop"
+    "start": "npm run develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
   },
   "author": "",
   "license": "ISC",

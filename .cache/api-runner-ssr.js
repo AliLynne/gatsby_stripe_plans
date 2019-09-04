@@ -1,6 +1,6 @@
 var plugins = [{
       plugin: require('/Users/ali/Documents/practice/gatsby_playground/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
-      options: {"plugins":[],"name":"Gatsby Playground","short_name":"GatsbyPlayground","start_url":"/","background_color":"#fff","theme_color":"#752f47","display":"standalone","icon":"static/favicon.svg"},
+      options: {"plugins":[],"name":"Gatsby Playground Starter","short_name":"GatsbyPlayground","start_url":"/","background_color":"#fff","theme_color":"#752f47","display":"standalone","icon":"static/favicon.svg"},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
