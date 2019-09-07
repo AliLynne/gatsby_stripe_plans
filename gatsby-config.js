@@ -21,8 +21,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Playground Starter`,
-        short_name: `GatsbyPlayground`,
+        name: `Gatsby Stripe Plans`,
+        short_name: `StripePlan`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#752f47`,
