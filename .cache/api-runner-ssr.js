@@ -1,4 +1,7 @@
 var plugins = [{
+      plugin: require('/Users/ali/Documents/practice/gatsby_playground/node_modules/gatsby-plugin-stripe/gatsby-ssr'),
+      options: {"plugins":[]},
+    },{
       plugin: require('/Users/ali/Documents/practice/gatsby_playground/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
       options: {"plugins":[],"name":"Gatsby Playground Starter","short_name":"GatsbyPlayground","start_url":"/","background_color":"#fff","theme_color":"#752f47","display":"standalone","icon":"static/favicon.svg"},
     }]

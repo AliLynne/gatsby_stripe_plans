@@ -1,11 +1,15 @@
 import React from 'react'
 
+import Checkout from '../components/checkout'
+
 const Index = () => {
   return (
     <div>
-      Hello World
+      <Checkout />
     </div>
   )
+  
 }
 
 export default Index
+
