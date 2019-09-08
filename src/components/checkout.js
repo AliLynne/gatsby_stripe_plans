@@ -2,17 +2,8 @@ import React from "react"
 
 import { StaticQuery, graphql } from 'gatsby'
 
-const buttonStyles = {
-  fontSize: "13px",
-  textAlign: "center",
-  color: "#fff",
-  outline: "none",
-  padding: "12px 60px",
-  boxShadow: "2px 5px 10px rgba(0,0,0,.1)",
-  backgroundColor: "rgb(255, 178, 56)",
-  borderRadius: "6px",
-  letterSpacing: "1.5px",
-}
+import checkoutStyles from './checkout.module.scss'
+
 const Checkout = class extends React.Component {
   constructor(props) {
     super(props) 
@@ -20,9 +11,12 @@ const Checkout = class extends React.Component {
     this.state = {
       key: this.props.stripe.public_key,
       plans: this.props.stripe.plans,
-      selected: '',
+      selected: this.props.stripe.plans[0].id,
       error: '',
-      buttonText: this.props.stripe.button_text
+      buttonText: this.props.stripe.button_text,
+      success: this.props.stripe.success_page,
+      cancel: this.props.stripe.cancel_page,
+      site: this.props.site
     }
   }
 
@@ -31,11 +25,14 @@ const Checkout = class extends React.Component {
   }
 
   handleSubmit = (event) => {
+    const success = `${this.state.site}/${this.state.success}`
+    const cancel = `${this.state.site}/${this.state.cancel}`
+    console.log(success)
     event.preventDefault()
     this.stripe.redirectToCheckout({
       items: [{ plan: this.state.selected, quantity: 1}],
-      successUrl: 'http://localhost:8000/success',
-      cancelUrl: 'http://localhost:8000/canceled',
+      successUrl: success,
+      cancelUrl: cancel,
     })
     .then((res) => {
       if (res.error) {
@@ -55,11 +52,13 @@ const Checkout = class extends React.Component {
   render() {
     const plans = this.state.plans
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className={checkoutStyles.form}onSubmit={this.handleSubmit}>
+        <h3 className={checkoutStyles.form__title}>Support My Work</h3>
         {plans && plans.map(plan => {
           return (
-            <label key={plan.id}>
+            <label className={checkoutStyles.form__label} key={plan.id}>
               <input
+                className={checkoutStyles.form__input}
                 type="radio"
                 name="plan-type"
                 value={plan.id}
@@ -72,7 +71,7 @@ const Checkout = class extends React.Component {
           
         })}
         <button
-          style={buttonStyles}
+          className={checkoutStyles.form__button}
           type="submit"
         >
           {this.state.buttonText}
@@ -89,6 +88,7 @@ export default () => (
         site {
           id
           siteMetadata {
+            siteUrl
             stripe {
               public_key
               plans {
@@ -96,13 +96,15 @@ export default () => (
                 label
               }
               button_text
+              success_page
+              cancel_page
             }
           }
         }
       }
     `}
     render={(data) => (
-      <Checkout stripe={data.site.siteMetadata.stripe} />
+      <Checkout stripe={data.site.siteMetadata.stripe} site={data.site.siteMetadata.siteUrl}/>
     )}
   />
 )

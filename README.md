@@ -9,6 +9,16 @@ How to use:
   - Follow the instructions for creating a [Client-Only Integration for a simple subscription](https://stripe.com/docs/payments/checkout/subscriptions/starting#client-only)
 
 
+Things you'll need:
+
+- Your Stripe Public Key (NOT your secret key)
+- List of plan id's
+- What you want your button to say
+
+In the `gatsby-config.js` file you'll need to change the public key, the plan list, and the button text.
+
+In the `src/pages/index.mdx` file you can put the text of the README for your project, or any other text you'd like using [Markdown Syntax](https://www.markdownguide.org/basic-syntax/). 
+
 
 ```javascript
 module.exports = {

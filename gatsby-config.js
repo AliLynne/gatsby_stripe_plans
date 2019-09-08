@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    siteUrl: "https://localhost:8000",
     stripe: {
       public_key: 'pk_test_7VgySoAHHC9xMs1cs64IeVcs00FdAcd5fF',
       plans: 
@@ -13,11 +14,29 @@ module.exports = {
             "id": "plan_FlfozYjwgbihrp"
           }
         ],
-      button_text: "Give Me Money"
+      button_text: "Give Me Money",
+      success_page: "success",
+      cancel_page: "cancel"
     }
   },
   plugins: [
     `gatsby-plugin-stripe`,
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path:`${__dirname}/src/pages/`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve("./src/components/default-page-layout.js")
+        }
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

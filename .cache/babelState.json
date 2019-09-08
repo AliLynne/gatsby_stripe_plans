@@ -1,7 +1,12 @@
 {
   "stages": {
     "develop": {
-      "plugins": [],
+      "plugins": [
+        {
+          "name": "@babel/plugin-proposal-object-rest-spread",
+          "options": {}
+        }
+      ],
       "presets": [],
       "options": {
         "cacheDirectory": true,
@@ -9,7 +14,12 @@
       }
     },
     "develop-html": {
-      "plugins": [],
+      "plugins": [
+        {
+          "name": "@babel/plugin-proposal-object-rest-spread",
+          "options": {}
+        }
+      ],
       "presets": [],
       "options": {
         "cacheDirectory": true,
@@ -17,7 +27,12 @@
       }
     },
     "build-html": {
-      "plugins": [],
+      "plugins": [
+        {
+          "name": "@babel/plugin-proposal-object-rest-spread",
+          "options": {}
+        }
+      ],
       "presets": [],
       "options": {
         "cacheDirectory": true,
@@ -25,7 +40,12 @@
       }
     },
     "build-javascript": {
-      "plugins": [],
+      "plugins": [
+        {
+          "name": "@babel/plugin-proposal-object-rest-spread",
+          "options": {}
+        }
+      ],
       "presets": [],
       "options": {
         "cacheDirectory": true,

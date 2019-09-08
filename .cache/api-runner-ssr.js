@@ -2,8 +2,11 @@ var plugins = [{
       plugin: require('/Users/ali/Documents/practice/gatsby_playground/node_modules/gatsby-plugin-stripe/gatsby-ssr'),
       options: {"plugins":[]},
     },{
+      plugin: require('/Users/ali/Documents/practice/gatsby_playground/node_modules/gatsby-plugin-mdx/gatsby-ssr'),
+      options: {"plugins":[],"defaultLayouts":{"default":"/Users/ali/Documents/practice/gatsby_playground/src/components/default-page-layout.js"}},
+    },{
       plugin: require('/Users/ali/Documents/practice/gatsby_playground/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
-      options: {"plugins":[],"name":"Gatsby Playground Starter","short_name":"GatsbyPlayground","start_url":"/","background_color":"#fff","theme_color":"#752f47","display":"standalone","icon":"static/favicon.svg"},
+      options: {"plugins":[],"name":"Gatsby Stripe Plans","short_name":"StripePlan","start_url":"/","background_color":"#fff","theme_color":"#752f47","display":"standalone","icon":"static/favicon.svg"},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [

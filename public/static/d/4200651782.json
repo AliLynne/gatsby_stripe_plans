@@ -1,0 +1,1 @@
+{"data":{"site":{"id":"Site","siteMetadata":{"stripe":{"public_key":"pk_test_7VgySoAHHC9xMs1cs64IeVcs00FdAcd5fF","plans":[{"id":"plan_FlfqFy4W1PlixB","label":"$1 per month"},{"id":"plan_FlfozYjwgbihrp","label":"$5 per month"}],"button_text":"Give Me Money","success_page":"success","cancel_page":"cancel"}}}}}
