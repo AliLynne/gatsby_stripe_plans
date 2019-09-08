@@ -12,6 +12,10 @@ module.exports = {
           {
             "label": "$5 per month",
             "id": "plan_FlfozYjwgbihrp"
+          },
+          {
+            "label": "$10 per month",
+            "id": "plan_Fm5wMfZtIDXCof"
           }
         ],
       button_text: "Give Me Money",
